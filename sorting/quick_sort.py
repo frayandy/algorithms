@@ -18,7 +18,7 @@ def _partition(array: List[int], low: int, high: int) -> Tuple[int, int]:
     :param high: high index where to end sort in array
     :return: final indexes where sort stops
     """
-    pivot = array[(low + high) // 2]
+    pivot = array[low + high // 2]
     i, j = low, high
 
     while i <= j:
@@ -47,3 +47,4 @@ if __name__ == '__main__':
     print(f'Before: {unsorted_array}')
     quick_sort(unsorted_array)
     print(f'After: {unsorted_array}')
+    assert sorted(unsorted_array) == unsorted_array
